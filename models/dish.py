@@ -1,8 +1,8 @@
-from sqlalchemy import Column, Integer, Double, String, TIMESTAMP
+from sqlalchemy import Column, Integer, Float, String, TIMESTAMP
 from sqlalchemy.orm import relationship
 
 from . import Base
-# from .participant import Participant
+# from .menuItem import MenuItem
 
 
 class Dish(Base):
@@ -14,16 +14,7 @@ class Dish(Base):
     times_appeared = Column(Integer)
     first_appeared = Column(TIMESTAMP)
     last_appeared = Column(TIMESTAMP)
-    lowest_price = Column(Double)
-    highest_price = Column(Double)
+    lowest_price = Column(Float)
+    highest_price = Column(Float)
 
-
-    # participant = relationship("Participant", order_by=Participant.id, back_populates="study")
-    #
-    # def __repr__(self):
-    #     return "Study: %s\nDescription: %s\nDate Created: %s\nDate Updated: %s\n" % (
-    #         self.name,
-    #         self.description,
-    #         str(self.date_created),
-    #         str(self.last_updated),
-    #     )
+    menu_item = relationship("MenuItem", back_populates="dish")
