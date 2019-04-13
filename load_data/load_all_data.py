@@ -12,7 +12,7 @@ from models.dish import Dish
 # FIRST SET UP POSTGRES:
 # CREATE DATABASE menus;
 # CREATE USER thiccdata WITH PASSWORD 'hablab';
-# GRANT ALL PRIVILEGES ON menus TO thiccdata;
+# GRANT ALL PRIVILEGES ON DATABASE menus TO thiccdata;
 
 engine = create_engine('postgresql+psycopg2://thiccdata:hablab@localhost/menus', echo=False)
 session = initialize_sql(engine)
