@@ -6,7 +6,7 @@ from models.menuItem import MenuItem
 from sqlalchemy import create_engine
 
 
-engine = create_engine('postgresql+psycopg2://sochiatrist:hcirox@localhost/sochiatrist_data', echo=False)
+engine = create_engine('postgresql+psycopg2://thiccdata:hablab@localhost/menus', echo=False)
 session = initialize_sql(engine)
 
 session.query(Dish).all()
