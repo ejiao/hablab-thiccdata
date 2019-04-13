@@ -17,7 +17,7 @@ class MenuItem(Base):
     ypos = Column(Float)
 
     dish_id = Column(Integer, ForeignKey('dish.id'))
-    dish = relationship("Dish", order_by=Dish.id, back_populates="menuItem")
+    dish = relationship("Dish", order_by=Dish.id, back_populates="menu_item")
 
     menu_page_id = Column(Integer, ForeignKey('menuPage.id'))
-    menu_page = relationship("menuPage", back_populates="menuItem")
+    menu_page = relationship("MenuPage", back_populates="menu_item")

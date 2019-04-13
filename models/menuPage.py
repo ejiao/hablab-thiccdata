@@ -16,6 +16,6 @@ class MenuPage(Base):
     uuid = Column(String)
 
     menu_id = Column(Integer, ForeignKey('menu.id'))
-    menu = relationship("Menu", order_by=Menu.id, back_populates="menuPage")
+    menu = relationship("Menu", order_by=Menu.id, back_populates="menu_page")
 
-    menu_item = relationship("MenuItem", back_populates="menuPage")
+    menu_item = relationship("MenuItem", back_populates="menu_page")
