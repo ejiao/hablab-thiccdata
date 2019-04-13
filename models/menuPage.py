@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, BigInteger
 from sqlalchemy.orm import relationship
 
 from . import Base
@@ -9,10 +9,10 @@ from .menu import Menu
 class MenuPage(Base):
     __tablename__ = 'menuPage'
     id = Column(Integer, primary_key=True)
-    page_number = Column(Integer)
-    image_id = Column(Integer)
-    full_height = Column(Integer)
-    full_width = Column(Integer)
+    page_number = Column(BigInteger)
+    image_id = Column(BigInteger)
+    full_height = Column(BigInteger)
+    full_width = Column(BigInteger)
     uuid = Column(String)
 
     menu_id = Column(Integer, ForeignKey('menu.id'))

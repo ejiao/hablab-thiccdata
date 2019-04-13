@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, TIMESTAMP
+from sqlalchemy import Column, BigInteger, String, TIMESTAMP
 from sqlalchemy.orm import relationship
 
 from . import Base
@@ -7,7 +7,7 @@ from . import Base
 
 class Menu(Base):
     __tablename__ = 'menu'
-    id = Column(Integer, primary_key=True)
+    id = Column(BigInteger, primary_key=True)
     name = Column(String)
     sponsor = Column(String)
     event = Column(String)
@@ -25,7 +25,7 @@ class Menu(Base):
     currency = Column(String)
     currency_symbol = Column(String)
     status = Column(String)
-    page_count = Column(Integer)
-    dish_count = Column(Integer)
+    page_count = Column(BigInteger)
+    dish_count = Column(BigInteger)
 
     menu_page = relationship("MenuPage", back_populates="menu")
